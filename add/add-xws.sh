@@ -46,9 +46,9 @@ cat>/usr/local/etc/xray/$user-tls.json<<EOF
       "net": "ws",
       "path": "/xray",
       "type": "none",
-      "host": "${bug}",
+      "host": "${BUG}",
       "tls": "tls"
-      "sni": "${bug}"
+      "sni": "${BUG}"
 
 }
 EOF
@@ -63,7 +63,7 @@ cat>/usr/local/etc/xray/$user-none.json<<EOF
       "net": "ws",
       "path": "/xray",
       "type": "none",
-      "host": "${bug}",
+      "host": "${BUG}",
       "tls": "none"
 }
 EOF
