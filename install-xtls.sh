@@ -13,7 +13,9 @@ apt install wget -y
 apt install sed -y
 apt install nano -y
 apt install python3 -y
-
+apt install lolcat -y
+gem install lolcat
+apt install figlet -y
 # // Make Main Directory
 mkdir -p /usr/local/harithwyd/
 

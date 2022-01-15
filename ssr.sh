@@ -144,3 +144,7 @@ wget -O /usr/bin/del-ssr https://raw.githubusercontent.com/XC0D3-X/Not-Premium/m
 wget -O /usr/bin/renew-ssr https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/renew/renew-ssr.sh && chmod +x /usr/bin/renew-ssr
 touch /usr/local/shadowsocksr/akun.conf
 rm -f /root/ssr.sh
+SSR_installation_status
+check_pid
+[[ ! -z ${PID} ]] && /etc/init.d/ssrmu stop
+/etc/init.d/ssrmu start

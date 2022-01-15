@@ -1,5 +1,5 @@
 #!/bin/bash
-# By Horasss
+# By Harithwyd
 #
 # ==================================================
 
@@ -269,11 +269,12 @@ wget -O restart "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/rest
 wget -O bw "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/bw.sh"
 wget -O resett "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/resett.sh"
 wget -O update "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/update.sh"
-wget -O kernel-updt "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/kernel-updt.sh"
+wget -O kernel-updt "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/kernel-update.sh"
 # uNLOCATED
 wget -O swap "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/swapkvm.sh"
 wget -O user-limit "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/user-limit.sh"
 wget -O xp "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/xp.sh"
+wget -O banner "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/banner.sh"
 
 chmod +x menu
 chmod +x menu-change
@@ -327,6 +328,11 @@ chmod +x swap
 chmod +x user-limit
 chmod +x xp
 chmod +x kernel-updt
+chmod +x banner
+mkdir /var/lib/banner-name;
+echo -e "Premium" >> /var/lib/banner-name/banner
+echo -e "standard" >> /var/lib/banner-name/ASCII
+echo -e "Nama Anda" >> /var/lib/banner-name/username
 
 echo "0 0 * * * root /sbin/hwclock -w   # synchronize hardware & system clock each day at 00:00 am" >> /etc/crontab
 echo "0 */2 * * * root /usr/bin/clear-log # clear log every  two hours" >> /etc/crontab
