@@ -11,7 +11,7 @@ PURPLE='\e[1;35m'
 CYAN='\e[36m'
 Lred='\e[91m'
 Lgreen='\e[92m'
-Lyellow='\e[93m'
+Lyellow='\e[1;93m'
 NC='\e[0m'
 GREEN='\033[0;32m'
 ORANGE='\033[0;33m'
@@ -98,7 +98,7 @@ echo -e  "  ╠═════════════════════�
 	echo -e "$blue  ║  $green Day                  :$NC  $DAY"
 	echo -e "$blue  ║  $green Date                 :$NC  $DATE"
   echo -e  "  ▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰ " |lolcat -F 0.2
-  echo -e "                                                       $yell SCRIPT PREMIUM"
+  echo -e "                                                       $Lyellow SCRIPT PREMIUM"
   echo -e  "                                                       $PURPLE - By harithwyd$NC"
   echo -e  "  $Lyellow Username: $username $NC"
   echo -e  "  ╔══════════════════════════════════════════════════════════════════╗" | lolcat
@@ -108,14 +108,16 @@ echo -e  "  ╠═════════════════════�
   echo -e  "$blue  ║  $PURPLE [ 1 ]$NC ► >> $Lyellow SSH & OpenVPN $NC      $PURPLE [ 6 ]$NC ► >> $Lyellow XRAY XTLS $NC"
   echo -e  "$blue  ║  $PURPLE [ 2 ]$NC ► >> $Lyellow Wireguard $NC          $PURPLE [ 7 ]$NC ► >> $Lyellow Trojan GFW $NC"
   echo -e  "$blue  ║  $PURPLE [ 3 ]$NC ► >> $Lyellow SSR & SS $NC           $PURPLE [ 8 ]$NC ► >> $Lyellow Check Running System $NC"
-  echo -e  "$blue  ║  $PURPLE [ 4 ]$NC ► >> $Lyellow XRAY VMESS $NC         $PURPLE [ 9 ]$NC ► >> $Bred Menu Theme $NC"
+  echo -e  "$blue  ║  $PURPLE [ 4 ]$NC ► >> $Lyellow XRAY VMESS $NC         $PURPLE [ 9 ]$NC ► >> $Lyellow Menu Theme $NC"
   echo -e  "$blue  ║  $PURPLE [ 5 ]$NC ► >> $Lyellow XRAY VLESS $NC         $PURPLE [ 10 ]$NC ► >> $Bred SYSTEM $NC"
+  echo -e  "$blue  ║$NC"
+  echo -e  "$blue  ║  $PURPLE [ 00 ]$NC ► >> $Lyellow MENU BANNER SETTINGS $NC"
   echo -e  "$blue  ║$NC"
   echo -e  "  ╠══════════════════════════════════════════════════════════════════╗" | lolcat
   echo -e  "  ║                              PREMIUM                             ║" | lolcat
   echo -e  "  ╚══════════════════════════════════════════════════════════════════╝" | lolcat
 echo -e   ""
-read -p "     Select From Options [1-8 or x] :  " opt
+read -p "     Select From Options [1-11 or x] :  " opt
 echo -e   ""
 case $opt in
   1) clear ; m-sshovpn ;;
@@ -128,6 +130,7 @@ case $opt in
   8) clear ; running ;;
   9) clear ; menu-change ;;
   10) clear ; m-system ;;
+  00) clear ; banner ;;
   x) exit ;;
 * )echo  "Please enter an correct number";;
 esac
