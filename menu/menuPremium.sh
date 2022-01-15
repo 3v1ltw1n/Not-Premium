@@ -117,7 +117,7 @@ echo -e  "  ╠═════════════════════�
   echo -e  "  ║                              PREMIUM                             ║" | lolcat
   echo -e  "  ╚══════════════════════════════════════════════════════════════════╝" | lolcat
 echo -e   ""
-read -p "     Select From Options [1-11 or x] :  " opt
+read -p "     Select From Options [1-10 or x] :  " opt
 echo -e   ""
 case $opt in
   1) clear ; m-sshovpn ;;
