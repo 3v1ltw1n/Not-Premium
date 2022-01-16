@@ -99,8 +99,8 @@ function username() {
   echo -e  "  ║                    FEATURES                     ║" | lolcat
   echo -e  "  ╠════════━━━━━━━━━────── • ──────━━━━━━━━━════════╝" | lolcat
   echo -e  "  ║" | lolcat
-  echo -e  "  ║ $Lgreen [ 1 ]$NC > $Lyellow Menu Banner$NC"
-  echo -e  "  ║ $Lgreen [ 2 ]$NC > $Lyellow Username$NC"
+  echo -e  "  ║ $Lgreen [ 1 ]$NC > $Lyellow Menu Banner$NC (For Premium Menu Only)"
+  echo -e  "  ║ $Lgreen [ 2 ]$NC > $Lyellow Username$NC (For Premium Menu & Custom Menu)"
   echo -e  "  ║ $Lyellow Another Features, Coming Soon!$NC"
   echo -e  "  ║" | lolcat
   echo -e  "  ╠════════━━━━━━━━━────── • ──────━━━━━━━━━════════╗" | lolcat

@@ -11,7 +11,7 @@ MYIP2="s/xxxxxxxxx/$MYIP/g";
 
 #Update Repository VPS
 clear
-apt update 
+apt update
 apt-get -y upgrade
 
 #Port Server
@@ -21,15 +21,14 @@ Port_Squid='3128';
 Port_OHP='8087';
 
 #Installing ohp Server
-cd 
+cd
 wget -O /usr/local/bin/ohp "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/ohp"
 chmod +x /usr/local/bin/ohp
 
 #Buat File OpenVPN TCP OHP
 cat > /etc/openvpn/tcp-ohp.ovpn <<END
 ############# WELCOME TO #############
-########## OKKAY KAYYO VPN ############
-###### OKKAY KAYYO OHP SERVER ########
+##########  harithwyd vpn  ###########
 setenv CLIENT_CERT 0
 setenv opt block-outside-dns
 client
@@ -69,14 +68,14 @@ cat /etc/openvpn/server/ca.crt >> /etc/openvpn/tcp-ohp.ovpn
 echo '</ca>' >> /etc/openvpn/tcp-ohp.ovpn
 cp /etc/openvpn/tcp-ohp.ovpn /home/vps/public_html/tcp-ohp.ovpn
 clear
-cd 
+cd
 
 #Buat Service Untuk OHP
 cat > /etc/systemd/system/ohp.service <<END
 [Unit]
-Description=Direct Squid Proxy For OpenVPN TCP By OKKAY KAYYO
-Documentation=https://okkaykayyo.my
-Documentation=https://t.me/okkaykayyo
+Description=Direct Squid Proxy For OpenVPN TCP By harithwyd
+Documentation=https://harithwyd.xyz
+Documentation=https://t.me/harithwyd
 Wants=network.target
 After=network.target
 

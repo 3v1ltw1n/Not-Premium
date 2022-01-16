@@ -80,6 +80,22 @@ clear
   sleep 3
   clear
 }
+function menu-custom() {
+  echo "Are You Sure?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes) make install ; break ;;
+        No) exit ;;
+    esac
+done
+clear
+  rm -rf /usr/bin/menu
+  wget -O /usr/bin/menu https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/menu/menuCustom.sh && chmod +x /usr/bin/menu
+  clear
+  echo -e "[ ${yell}INFO${NC} ] Your Changes Installed Successfully "
+  sleep 3
+  clear
+}
 clear
 echo -e ""
 echo -e ""
@@ -90,7 +106,8 @@ echo -e " $green *[1] $white> $PURPLE Menu (Default)$NC"
 echo -e " $green *[2] $white> $PURPLE Menu X lolcat (Colourful)$NC"
 echo -e " $green *[3] $white> $PURPLE Menu Modified $NC"
 echo -e " $green *[4] $white> $PURPLE Menu Premium $NC"
-echo -e " $green *[5] $white> $red BACK TO MENU$NC"
+echo -e " $green *[5] $white> $PURPLE Custom $NC"
+echo -e " $green *[6] $white> $red BACK TO MENU$NC"
 echo -e " $Lyellow Another Menu Theme, Coming Soon!"
 echo -e ""
 echo -e " $Lyellow ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ $NC"
@@ -116,8 +133,12 @@ case $opt in
    ;;
   5)
    clear
-   menu
+   menu-custom
    ;;
+  6)
+  clear
+  menu
+  ;;
  x)
    clear
    exit

@@ -1,43 +1,39 @@
 #!/bin/bash
-# XRay Installation
-# Coded By harithwyd
-# ==================================
+# ===================================
+# Xray Quick Setup
+# ===================================
 
-# // Update & Installing Requirement
+# // Silakan Isi Bawah Ini
+export port='443' # >> Port Vless RPRX Direct
+export Cert_path='/etc/v2ray/v2ray.crt' # >> Certificate Path
+export Cert_Key_Path='/etc/v2ray/v2ray.key' # >> Certificate Key Path
+
+# // Creating UUID
+export uuid=$(cat /proc/sys/kernel/random/uuid)
+
+# // Installing Requirement
 apt update -y
-apt upgrade -y
-apt install socat -y
-apt install python -y
-apt install curl -y
-apt install wget -y
-apt install sed -y
-apt install nano -y
-apt install python3 -y
-apt install lolcat -y
-gem install lolcat
-apt install figlet -y
-# // Make Main Directory
-mkdir -p /usr/local/harithwyd/
+apt upgrade  -y
+apt install zip unzip gzip curl wget nano vim -y
 
-# // Installation XRay Core
-wget -q -O /usr/local/harithwyd/xray-mini "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/xray-mini"
-chmod +x /usr/local/harithwyd/xray-mini
+# // Downloading Core
+wget -O /usr/local/xray-mini "https://raw.githubusercontent.com/XC0D3-X/Original/main/xray-mini"
+chmod +x /usr/local/xray-mini
 
-# // Make XRay Mini Root Folder
+# // Make Config Folder
 mkdir -p /etc/xray-mini/
-chmod 775 /etc/xray-mini/
 
-# // Installing XRay Mini Service
-cat > /etc/systemd/system/xray-mini@.service << EOF
+# // Installing Service
+cat > /etc/systemd/system/xray-mini.service << END
 [Unit]
-Description=XRay-Mini Service ( %i )
-Documentation=https://wildyproject.com https://github.com/XTLS/Xray-core
-After=network.target nss-lookup.target
+Description=XRay-Mini
+Documentation=https://harithwyd.xyz
+After=syslog.target network-online.target
 
 [Service]
 User=root
 NoNewPrivileges=true
-ExecStart=/usr/local/harithwyd/xray-mini -config /etc/xray-mini/%i.json
+ExecStart=/usr/local/xray-mini -c /etc/xray-mini/config.json
 Restart=on-failure
 RestartPreventExitStatus=23
 LimitNPROC=10000
@@ -45,79 +41,19 @@ LimitNOFILE=1000000
 
 [Install]
 WantedBy=multi-user.target
-EOF
-
-# // String
-ssl_path_crt="/etc/v2ray/v2ray.crt"
-ssl_path_key="/etc/v2ray/v2ray.key"
-
-uuid=$(cat /proc/sys/kernel/random/uuid)
-
-# // Vless Splice
-cat > /etc/xray-mini/vless-splice.json << END
-{
-  "inbounds": [
-    {
-      "port": 443,
-      "protocol": "vless",
-      "settings": {
-        "clients": [
-          {
-            "id": "${uuid}",
-            "flow": "xtls-rprx-splice"
-#XRay
-          }
-        ],
-        "decryption": "none",
-        "fallbacks": [
-          {
-            "dest": 60000,
-            "alpn": "",
-            "xver": 1
-          },
-          {
-            "dest": 60001,
-            "alpn": "h2",
-            "xver": 1
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "xtls",
-        "xtlsSettings": {
-          "minVersion": "1.2",
-          "certificates": [
-            {
-              "certificateFile": "${ssl_path_crt}",
-              "keyFile": "${ssl_path_key}"
-            }
-          ]
-        }
-      },
-      "sniffing": {
-        "enabled": true,
-        "destOverride": [
-          "http",
-          "tls"
-        ]
-      }
-    }
-  ],
-  "outbounds": [
-    {
-      "protocol": "freedom"
-    }
-  ]
-}
 END
 
-# // Vless Direct
-cat > /etc/xray-mini/vless-direct.json << END
+# // XRay XTLS RPRX Direct
+cat > /etc/xray-mini/config.json << END
 {
+  "log": {
+    "access": "/var/log/xray/access2.log",
+    "error": "/var/log/xray/error.log",
+    "loglevel": "info"
+  },
   "inbounds": [
     {
-      "port": 443,
+      "port": ${port},
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -148,8 +84,8 @@ cat > /etc/xray-mini/vless-direct.json << END
           "minVersion": "1.2",
           "certificates": [
             {
-              "certificateFile": "${ssl_path_crt}",
-              "keyFile": "${ssl_path_key}"
+              "certificateFile": "${Cert_path}",
+              "keyFile": "${Cert_Key_Path}"
             }
           ]
         }
@@ -170,18 +106,20 @@ cat > /etc/xray-mini/vless-direct.json << END
   ]
 }
 END
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
+
+
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
 iptables-save >/etc/iptables.rules.v4
 netfilter-persistent save
 netfilter-persistent reload
 systemctl daemon-reload
 
-# // Enable & Start Service
-systemctl enable xray-mini@vless-direct
-systemctl start xray-mini@vless-direct
-systemctl enable xray-mini@vless-splice
-systemctl start xray-mini@vless-splice
+
+systemctl disable xray-mini
+systemctl stop xray-mini
+systemctl enable xray-mini
+systemctl start xray-mini
 
 # // Downloading Menu
 cd /usr/bin

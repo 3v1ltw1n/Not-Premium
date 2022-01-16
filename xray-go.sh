@@ -420,8 +420,7 @@ systemctl enable xray@vless.service
 systemctl start xray@vless.service
 systemctl enable xray@vnone.service
 systemctl start xray@vnone.service
-systemctl enable xray@tcp_xtls.service
-systemctl start xray@tcp_xtls.service
+
 
 cd /usr/bin
 
