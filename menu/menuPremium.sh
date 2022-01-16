@@ -73,9 +73,9 @@ username=$(cat /var/lib/banner-name/username)
 	swap=$( free -m | awk 'NR==4 {print $2}' )
 echo ""
 figlet -f$ASCII " $banner" | lolcat -p 9 -F 0.5
-echo -e  "  ╔═════════════════════════════════════════════════════════════════╗" | lolcat
-echo -e  "  ║                      ┃ SYSTEM INFORMATION ┃                     ║" | lolcat
-echo -e  "  ╠═════════════════════════════════════════════════════════════════╝" | lolcat
+echo -e  "  ╔═══════════════════════════════════════════════════════════════╗" | lolcat
+echo -e  "  ║                     ┃ SYSTEM INFORMATION ┃                    ║" | lolcat
+echo -e  "  ╠═══════════════════════════════════════════════════════════════╝" | lolcat
 	echo -e "$blue  ║  $green VPS Type             :$NC  $typevps"
 	echo -e "$blue  ║  $green CPU Model            :$NC $cname"
 	echo -e "$blue  ║  $green CPU Frequency        :$NC $freq MHz"
@@ -97,13 +97,13 @@ echo -e  "  ╠═════════════════════�
 	echo -e "$blue  ║  $green Time                 :$NC  $WKT"
 	echo -e "$blue  ║  $green Day                  :$NC  $DAY"
 	echo -e "$blue  ║  $green Date                 :$NC  $DATE"
-  echo -e  "  ▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰ " |lolcat -F 0.2
+  echo -e  "  ▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰ " |lolcat -F 0.2
   echo -e "                                                       $Lyellow SCRIPT PREMIUM"
   echo -e  "                                                       $PURPLE - By harithwyd$NC"
   echo -e  "  $Lyellow Username: $username $NC"
-  echo -e  "  ╔══════════════════════════════════════════════════════════════════╗" | lolcat
-  echo -e  "  ║                          ┃ SCRIPT MENU ┃                         ║" | lolcat
-  echo -e  "  ╠══════════════════════════════════════════════════════════════════╝" | lolcat
+  echo -e  "  ╔════════════════════════════════════════════════════════════════╗" | lolcat
+  echo -e  "  ║                         ┃ SCRIPT MENU ┃                        ║" | lolcat
+  echo -e  "  ╠════════════════════════════════════════════════════════════════╝" | lolcat
   echo -e  "$blue  ║$NC"
   echo -e  "$blue  ║  $PURPLE [ 1 ]$NC ► >> $Lyellow SSH & OpenVPN $NC      $PURPLE [ 6 ]$NC ► >> $Lyellow XRAY XTLS $NC"
   echo -e  "$blue  ║  $PURPLE [ 2 ]$NC ► >> $Lyellow Wireguard $NC          $PURPLE [ 7 ]$NC ► >> $Lyellow Trojan GFW $NC"
@@ -113,9 +113,9 @@ echo -e  "  ╠═════════════════════�
   echo -e  "$blue  ║$NC"
   echo -e  "$blue  ║  $PURPLE [ 00 ]$NC ► >> $Lyellow MENU BANNER SETTINGS $NC"
   echo -e  "$blue  ║$NC"
-  echo -e  "  ╠══════════════════════════════════════════════════════════════════╗" | lolcat
-  echo -e  "  ║                              PREMIUM                             ║" | lolcat
-  echo -e  "  ╚══════════════════════════════════════════════════════════════════╝" | lolcat
+  echo -e  "  ╠════════════════════════════════════════════════════════════════╗" | lolcat
+  echo -e  "  ║                             PREMIUM                            ║" | lolcat
+  echo -e  "  ╚════════════════════════════════════════════════════════════════╝" | lolcat
 echo -e   ""
 read -p "     Select From Options [1-10 or x] :  " opt
 echo -e   ""
