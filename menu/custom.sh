@@ -25,6 +25,7 @@ function Menu-Text() {
   echo -e " ║ $Lgreen [ 3 ]$NC > $Lyellow PURPLE$NC"
   echo -e " ║ $Lgreen [ 4 ]$NC > $Lyellow YELLOW$NC"
   echo -e " ║ $Lgreen [ 5 ]$NC > $Lyellow BLUE$NC"
+  echo -e " ║ $Lgreen [ 6 ]$NC > $Lyellow WHITE$NC"
   echo -e " $Lyellow ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ $NC"
   echo -e ""
   read -rp "     Select menu :  "  opt
@@ -48,6 +49,10 @@ function Menu-Text() {
   echo -e '\e[1;34m' >> /var/lib/banner-name/colour1
   echo -e "[ ${yell}INFO${NC} ] Your Changes Installed Successfully "
   sleep 1
+  elif [ $opt = 6 ]; then
+  echo -e '\e[1;37m' >> /var/lib/banner-name/colour
+  echo -e "[ ${yell}INFO${NC} ] Your Changes Installed Successfully "
+  sleep 1
   else
     echo -e "Please Enter the Correct Number "
     custom
@@ -63,6 +68,7 @@ echo -e " ║ $Lgreen [ 2 ]$NC > $Lyellow CYAN$NC"
 echo -e " ║ $Lgreen [ 3 ]$NC > $Lyellow PURPLE$NC"
 echo -e " ║ $Lgreen [ 4 ]$NC > $Lyellow YELLOW$NC"
 echo -e " ║ $Lgreen [ 5 ]$NC > $Lyellow BLUE$NC"
+echo -e " ║ $Lgreen [ 6 ]$NC > $Lyellow WHITE$NC"
 echo -e " $Lyellow ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ $NC"
 echo -e ""
 echo "Enter a name for your colour"
@@ -85,6 +91,10 @@ echo -e "[ ${yell}INFO${NC} ] Your Changes Installed Successfully "
 sleep 1
 elif [ $opt = 5 ]; then
 echo -e '\e[1;34m' >> /var/lib/banner-name/colour
+echo -e "[ ${yell}INFO${NC} ] Your Changes Installed Successfully "
+sleep 1
+elif [ $opt = 6 ]; then
+echo -e '\e[1;37m' >> /var/lib/banner-name/colour
 echo -e "[ ${yell}INFO${NC} ] Your Changes Installed Successfully "
 sleep 1
 else
