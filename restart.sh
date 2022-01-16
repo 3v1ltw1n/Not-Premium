@@ -43,8 +43,7 @@ case $Restart in
                 systemctl restart xray@none.service
                 systemctl restart xray@vless.service
                 systemctl restart xray@vnone.service
-                systemctl restart xray-mini@vless-direct
-                systemctl restart xray-mini@vless-splice
+                systemctl restart xray-mini
                 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000
                 echo -e ""
                 echo -e "======================================"
