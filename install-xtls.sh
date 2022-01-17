@@ -17,7 +17,7 @@ apt upgrade  -y
 apt install zip unzip gzip curl wget nano vim -y
 
 # // Downloading Core
-wget -O /usr/local/xray-mini "https://raw.githubusercontent.com/XC0D3-X/Original/main/xray-mini"
+wget -O /usr/local/xray-mini "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/xray-mini"
 chmod +x /usr/local/xray-mini
 
 # // Make Config Folder
