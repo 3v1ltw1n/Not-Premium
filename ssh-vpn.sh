@@ -21,7 +21,7 @@ commonname=www.harithwyd.xyz
 email=admin@harithwyd.xyz
 
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/XC0D3-X/Original/main/password"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -95,14 +95,14 @@ mkdir /etc/systemd/system/nginx.service.d
 printf "[Service]\nExecStartPost=/bin/sleep 0.1\n" | tee /etc/systemd/system/nginx.service.d/override.conf
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/XC0D3-X/Original/main/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/nginx.conf"
 mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/XC0D3-X/Original/main/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/vps.conf"
 /etc/init.d/nginx restart
 
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/XC0D3-X/Original/main/badvpn-udpgw64"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500' /etc/rc.local
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
@@ -122,7 +122,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 # install squid
 cd
 apt -y install squid3
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/XC0D3-X/Original/main/squid3.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # setting vnstat
@@ -172,14 +172,14 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
 #OpenVPN
-wget https://raw.githubusercontent.com/XC0D3-X/Original/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # install fail2ban
 apt -y install fail2ban
 
 # Install DDoS Deflate
 apt install -y dnsutils tcpdump dsniff grepcidr
-wget -qO ddos.zip "https://raw.githubusercontent.com/XC0D3-X/Original/main/ddos-deflate-1.3.zip"
+wget -qO ddos.zip "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/ddos-deflate-1.3.zip"
 unzip ddos.zip
 cd ddos-deflate
 chmod +x install.sh
@@ -189,7 +189,7 @@ rm -rf ddos.zip ddos-deflate
 
 
 # banner /etc/issue.net
-wget -O /etc/issue.net "https://raw.githubusercontent.com/XC0D3-X/Original/main/banner.conf"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/banner.conf"
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
@@ -213,69 +213,69 @@ netfilter-persistent reload
 # download script
 cd /usr/bin
 # menu
-wget -O menu "https://raw.githubusercontent.com/XC0D3-X/Original/main/menu/menu.sh"
-wget -O menu-change "https://raw.githubusercontent.com/XC0D3-X/Original/main/menu/menu-change.sh"
+wget -O menu "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/menu/menu.sh"
+wget -O menu-change "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/menu/menu-change.sh"
 # menu ssh-ovpn
-wget -O m-sshovpn "https://raw.githubusercontent.com/XC0D3-X/Original/main/menu/m-sshovpn.sh"
-wget -O usernew "https://raw.githubusercontent.com/XC0D3-X/Original/main/add/usernew.sh"
-wget -O trial "https://raw.githubusercontent.com/XC0D3-X/Original/main/trial.sh"
-wget -O renew "https://raw.githubusercontent.com/XC0D3-X/Original/main/renew/renew.sh"
-wget -O hapus "https://raw.githubusercontent.com/XC0D3-X/Original/main/hapus.sh"
-wget -O cek "https://raw.githubusercontent.com/XC0D3-X/Original/main/check/cek.sh"
-wget -O member "https://raw.githubusercontent.com/XC0D3-X/Original/main/member.sh"
-wget -O delete "https://raw.githubusercontent.com/XC0D3-X/Original/main/delete/delete.sh"
-wget -O autokill "https://raw.githubusercontent.com/XC0D3-X/Original/main/autokill.sh"
-wget -O ceklim "https://raw.githubusercontent.com/XC0D3-X/Original/main/ceklim.sh"
-wget -O tendang "https://raw.githubusercontent.com/XC0D3-X/Original/main/tendang.sh"
+wget -O m-sshovpn "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/menu/m-sshovpn.sh"
+wget -O usernew "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/add/usernew.sh"
+wget -O trial "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/trial.sh"
+wget -O renew "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/renew/renew.sh"
+wget -O hapus "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/hapus.sh"
+wget -O cek "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/check/cek.sh"
+wget -O member "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/member.sh"
+wget -O delete "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/delete/delete.sh"
+wget -O autokill "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/autokill.sh"
+wget -O ceklim "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/ceklim.sh"
+wget -O tendang "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/tendang.sh"
 # menu wg
-wget -O m-wg "https://raw.githubusercontent.com/XC0D3-X/Original/main/menu/m-wg.sh"
+wget -O m-wg "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/menu/m-wg.sh"
 # menu ssr
-wget -O m-ssr "https://raw.githubusercontent.com/XC0D3-X/Original/main/menu/m-ssr.sh"
+wget -O m-ssr "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/menu/m-ssr.sh"
 # menu xray
-wget -O xray-vmess "https://raw.githubusercontent.com/XC0D3-X/Original/main/menu/xray-vmess.sh"
-wget -O xray-vless "https://raw.githubusercontent.com/XC0D3-X/Original/main/menu/xray-vless.sh"
-wget -O xray-xtls "https://raw.githubusercontent.com/XC0D3-X/Original/main/menu/xray-xtls.sh"
+wget -O xray-vmess "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/menu/xray-vmess.sh"
+wget -O xray-vless "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/menu/xray-vless.sh"
+wget -O xray-xtls "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/menu/xray-xtls.sh"
 # menu trojan
-wget -O m-trojan "https://raw.githubusercontent.com/XC0D3-X/Original/main/menu/m-trojan.sh"
+wget -O m-trojan "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/menu/m-trojan.sh"
 # menu system
-wget -O m-system "https://raw.githubusercontent.com/XC0D3-X/Original/main/menu/m-system.sh"
-wget -O domain-menu "https://raw.githubusercontent.com/XC0D3-X/Original/main/domain-menu.sh"
-wget -O add-host "https://raw.githubusercontent.com/XC0D3-X/Original/main/add-host.sh"
-wget -O cff "https://raw.githubusercontent.com/XC0D3-X/Original/main/cff.sh"
-wget -O cfd "https://raw.githubusercontent.com/XC0D3-X/Original/main/cfd.sh"
-wget -O cfh "https://raw.githubusercontent.com/XC0D3-X/Original/main/cfh.sh"
-wget -O certv2ray "https://raw.githubusercontent.com/XC0D3-X/Original/main/certv2ray.sh"
-wget -O port-change "https://raw.githubusercontent.com/XC0D3-X/Original/main/port/port-change.sh"
+wget -O m-system "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/menu/m-system.sh"
+wget -O domain-menu "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/domain-menu.sh"
+wget -O add-host "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/add-host.sh"
+wget -O cff "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/cff.sh"
+wget -O cfd "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/cfd.sh"
+wget -O cfh "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/cfh.sh"
+wget -O certv2ray "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/certv2ray.sh"
+wget -O port-change "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/port/port-change.sh"
    # change port
-wget -O port-ssl "https://raw.githubusercontent.com/XC0D3-X/Original/main/port/port-ssl.sh"
-wget -O port-ovpn "https://raw.githubusercontent.com/XC0D3-X/Original/main/port/port-ovpn.sh"
-wget -O port-wg "https://raw.githubusercontent.com/XC0D3-X/Original/main/port/port-wg.sh"
-wget -O port-xws "https://raw.githubusercontent.com/XC0D3-X/Original/main/port/port-xws.sh"
-wget -O port-xvless "https://raw.githubusercontent.com/XC0D3-X/Original/main/port/port-xvless.sh"
-wget -O port-xtls "https://raw.githubusercontent.com/XC0D3-X/Original/main/port/port-xtls.sh"
-wget -O port-tr "https://raw.githubusercontent.com/XC0D3-X/Original/main/port/port-tr.sh"
-wget -O port-squid "https://raw.githubusercontent.com/XC0D3-X/Original/main/port/port-squid.sh"
+wget -O port-ssl "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/port/port-ssl.sh"
+wget -O port-ovpn "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/port/port-ovpn.sh"
+wget -O port-wg "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/port/port-wg.sh"
+wget -O port-xws "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/port/port-xws.sh"
+wget -O port-xvless "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/port/port-xvless.sh"
+wget -O port-xtls "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/port/port-xtls.sh"
+wget -O port-tr "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/port/port-tr.sh"
+wget -O port-squid "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/port/port-squid.sh"
 # menu system
-wget -O webmin "https://raw.githubusercontent.com/XC0D3-X/Original/main/webmin.sh"
-wget -O running "https://raw.githubusercontent.com/XC0D3-X/Original/main/running.sh"
-wget -O ram "https://raw.githubusercontent.com/XC0D3-X/Original/main/ram.sh"
-wget -O speedtest "https://raw.githubusercontent.com/XC0D3-X/Original/main/speedtest_cli.py"
-wget -O info "https://raw.githubusercontent.com/XC0D3-X/Original/main/info.sh"
-wget -O about "https://raw.githubusercontent.com/XC0D3-X/Original/main/about.sh"
-wget -O bbr "https://raw.githubusercontent.com/XC0D3-X/Original/main/bbr.sh"
-wget -O auto-reboot "https://raw.githubusercontent.com/XC0D3-X/Original/main/auto-reboot.sh"
-wget -O clear-log "https://raw.githubusercontent.com/XC0D3-X/Original/main/clear-log.sh"
-wget -O restart "https://raw.githubusercontent.com/XC0D3-X/Original/main/restart.sh"
-wget -O bw "https://raw.githubusercontent.com/XC0D3-X/Original/main/bw.sh"
-wget -O resett "https://raw.githubusercontent.com/XC0D3-X/Original/main/resett.sh"
-wget -O update "https://raw.githubusercontent.com/XC0D3-X/Original/main/update.sh"
-wget -O kernel-updt "https://raw.githubusercontent.com/XC0D3-X/Original/main/kernel-update.sh"
+wget -O webmin "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/webmin.sh"
+wget -O running "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/running.sh"
+wget -O ram "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/ram.sh"
+wget -O speedtest "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/speedtest_cli.py"
+wget -O info "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/info.sh"
+wget -O about "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/about.sh"
+wget -O bbr "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/bbr.sh"
+wget -O auto-reboot "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/auto-reboot.sh"
+wget -O clear-log "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/clear-log.sh"
+wget -O restart "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/restart.sh"
+wget -O bw "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/bw.sh"
+wget -O resett "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/resett.sh"
+wget -O update "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/update.sh"
+wget -O kernel-updt "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/kernel-update.sh"
 # uNLOCATED
-wget -O swap "https://raw.githubusercontent.com/XC0D3-X/Original/main/swapkvm.sh"
-wget -O user-limit "https://raw.githubusercontent.com/XC0D3-X/Original/main/user-limit.sh"
-wget -O xp "https://raw.githubusercontent.com/XC0D3-X/Original/main/xp.sh"
-wget -O banner "https://raw.githubusercontent.com/XC0D3-X/Original/main/banner.sh"
-wget -O custom "https://raw.githubusercontent.com/XC0D3-X/Original/main/menu/custom.sh"
+wget -O swap "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/swapkvm.sh"
+wget -O user-limit "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/user-limit.sh"
+wget -O xp "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/xp.sh"
+wget -O banner "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/banner.sh"
+wget -O custom "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/menu/custom.sh"
 
 chmod +x menu
 chmod +x menu-change
