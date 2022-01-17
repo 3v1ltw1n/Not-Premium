@@ -442,10 +442,10 @@ chmod +x del-xvless
 chmod +x renew-xvless
 chmod +x cek-xvless
 
-cd
-wget -qO web.tar.gz "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/web.tar.gz"
-tar xzf web.tar.gz -C /home/vps/public_html
-rm -f web.tar.gz
+#cd
+#wget -qO web.tar.gz "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/web.tar.gz"
+#tar xzf web.tar.gz -C /home/vps/public_html
+#rm -f web.tar.gz
 
 systemctl daemon-reload
 systemctl restart nginx
