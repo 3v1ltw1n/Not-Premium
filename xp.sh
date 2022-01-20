@@ -98,16 +98,16 @@ fi
 done
 systemctl restart xray@vless
 systemctl restart xray@vnone
-data=( `cat /usr/local/etc/xray/tcp_xtls.json | grep '^###' | cut -d ' ' -f 2`);
+data=( `cat /etc/xray-mini/config.json | grep '^###' | cut -d ' ' -f 2`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
 do
-exp=$(grep -w "^### $user" "/usr/local/etc/xray/tcp_xtls.json" | cut -d ' ' -f 3)
+exp=$(grep -w "^### $user" "/etc/xray-mini/config.json" | cut -d ' ' -f 3)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 if [[ "$exp2" = "0" ]]; then
-sed -i "/^### $user $exp/,/^},{/d" /usr/local/etc/xray/tcp_xtls.json
+sed -i "/^### $user $exp/,/^},{/d" /etc/xray-mini/config.json
 fi
 done
-systemctl restart xray@tcp_xtls
+systemctl restart xray-mini
