@@ -114,7 +114,7 @@ blue='\e[1;34m'
   CYAN='\e[36m'
   Lred='\e[91m'
   Lgreen='\e[92m'
-  Lyellow='\e[93m'
+  Lyellow='\e[1;93m'
   NC='\e[0m'
   MYIP=$(wget -qO- ifconfig.co);
   echo "Checking VPS"

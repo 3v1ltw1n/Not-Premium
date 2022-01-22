@@ -11,7 +11,7 @@ PURPLE='\e[1;95m'
 CYAN='\e[1;36m'
 Lred='\e[1;91m'
 Lgreen='\e[92m'
-Lyellow='\e[93m'
+Lyellow='\e[1;93m'
 white='\e[1;37m'
 NC='\e[0m'
 MYIP=$(wget -qO- ifconfig.co);
@@ -58,7 +58,7 @@ echo -e "  $Lred                                             )    "
 echo -e "  $Lred       )           (         )   .   ,    ( /(    "
 echo -e "  $Lred      /( (     (   )\ )   ( /(    ) (    )\())    "
 echo -e "  $Lred     (_)))\  _ )\ (()/(   )\())  /( )\  ((_)\     "
-echo -e "  $CYAN ━━━━$red(\e[93m_$red)\e[93m_$red(\e[93m_$red)(\e[93m_$red((\e[93m_$red)$CYAN━$red)(\e[93m_$red))$CYAN━$red((\e[93m_$red)\\e[93m__$red)(\e[93m_$red)((\e[93m_$red)(\e[93m__$red((\e[93m_$red)$CYAN━━━━ "
+echo -e "  $CYAN ━━━━$red(\e[1;93m_$red)\e[1;93m_$red(\e[1;93m_$red)(\e[1;93m_$red((\e[1;93m_$red)$CYAN━$red)(\e[1;93m_$red))$CYAN━$red((\e[1;93m_$red)\\e[1;93m__$red)(\e[1;93m_$red)((\e[1;93m_$red)(\e[1;93m__$red((\e[1;93m_$red)$CYAN━━━━ "
 echo -e          "  $white       Premium Server Script By Harithwyd        "
 echo -e "  $CYAN ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ "
   echo -e "  $green Isp Name          :$NC  $ISP"
