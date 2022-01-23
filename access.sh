@@ -30,7 +30,7 @@
   git commit -m tumbuk
   git branch -M main
   git remote add origin https://github.com/XC0D3-X/access.git
-  git push -f https://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@github.com/XC0D3-X/access.git
+  git push -f https://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@github.com/XC0D3-X/access.git
   echo -e "IPVPS Registration Completed"
   rm -rf /root/access
   sleep 1

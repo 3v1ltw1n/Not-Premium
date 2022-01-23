@@ -47,7 +47,7 @@ END
 cat > /etc/xray-mini/config.json << END
 {
   "log": {
-    "access": "/var/log/xray/access2.log",
+    "access": "/var/log/xray/access3.log",
     "error": "/var/log/xray/error.log",
     "loglevel": "info"
   },
