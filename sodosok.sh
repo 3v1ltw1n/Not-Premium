@@ -92,7 +92,7 @@ wget -O add-ss "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/add/a
 wget -O del-ss "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/delete/del-ss.sh"
 wget -O cek-ss "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/check/cek-ss.sh"
 wget -O renew-ss "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/renew/renew-ss.sh"
-wget -O access "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/access.sh"
+#wget -O access "https://raw.githubusercontent.com/XC0D3-X/Not-Premium/main/access.sh"
 
 chmod +x add-ss
 chmod +x del-ss
